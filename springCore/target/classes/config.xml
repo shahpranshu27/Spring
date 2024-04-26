@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd">
+  <bean name="student1" class="com.springcore.Student">
+  <!-- this is setter injection -->
+	  <!-- <property name="studentId">
+	  this is value setting
+	  	<value>11</value>
+	  </property>
+	  <property name="studentName">
+	  	<value>abc</value>
+	  </property>
+	  
+	  <property name="studentAddress">
+	  	<value>delhi</value>
+	  </property> -->
+	  
+	  <!-- value as attribute -->
+	  <property name="studentId" value="12"/>
+	  <property name="studentName" value="xyz"/>
+	  <property name="studentAddress" value="Pune"/>
+  <!-- collaborators and configuration for this bean go here -->
+  </bean>
+  
+  <bean name="student2" class="com.springcore.Student">
+  <property name="studentId" value="13"/>
+  <property name="studentName" value="def"/>
+  <property name="studentAddress" value="Tokyo"/>
+  </bean>
+  <!-- more bean definitions go here -->
+  
+  <!-- value by p schema -->
+  <bean name="student3" class="com.springcore.Student" p:studentId="14" p:studentName="pq" p:studentAddress="NYC"/>
+</beans>
