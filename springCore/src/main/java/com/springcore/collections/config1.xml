@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd">
+  
+  <bean name="emp1" class="com.springcore.collections.Emp">
+		<property name="empName" value="Ramu"/>
+		
+		<property name="phones">
+		<!-- if just 1 element to enter, no need to include list tag. can directly write in value tag -->
+		
+			<list>
+				<value>7868565323</value>
+				<value>4434232523</value>
+				<value>2432436562</value>
+				<null/>
+			</list>
+		
+		</property>
+		
+		<property name="addresses">
+		
+			<set>
+				<value>Pune</value>
+				<value>NYC</value>
+				<value>Delhi</value>
+				<value>Pune</value>
+			</set>
+		
+		</property>
+		
+		<property name="courses">
+		
+			<map>
+				<entry key="java" value="3 months" />
+				<entry key="python" value="1 months" />
+				<entry key="C++" value="2 months" />
+			</map>
+		
+		</property>
+		
+		<property name="props">
+			<props>
+				<prop key="age">21</prop>
+			</props>
+		</property>
+	</bean>
+  
+</beans>
