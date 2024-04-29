@@ -27,4 +27,11 @@
   
   </bean>
   
+  <bean class="com.springcore.ci.Addition" name="add">
+  <!-- if type is not specified, then by default it will assume as String -->
+  <!-- if i want to change the order of a and b, then write index=1 at a, and index=0 at b -->
+  	<constructor-arg value="12" type="double"/>
+  	<constructor-arg value="32" type="double"/>
+  </bean>
+  
 </beans>
