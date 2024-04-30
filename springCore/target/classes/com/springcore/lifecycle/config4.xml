@@ -9,12 +9,18 @@
   http://www.springframework.org/schema/context
   http://www.springframework.org/schema/context/spring-context.xsd">
   
-  <bean class="com.springcore.lifecycle.Samay" name="sama" init-method="init" destroy-method="destroy">
+  <!-- <bean class="com.springcore.lifecycle.Samay" name="sama" init-method="init" destroy-method="destroy">
   	<property name="price" value="10"/>
   </bean>
   
   <bean class="com.springcore.lifecycle.Sagar" name="saga">
   	<property name="price" value="12"/>
+  </bean> -->
+  
+  <context:annotation-config/>
+  
+  <bean class="com.springcore.lifecycle.Vidith" name="vidi">
+  	<property name="subject" value="python" />
   </bean>
   
   

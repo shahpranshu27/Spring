@@ -15,9 +15,12 @@ public class Test {
 //		
 //		context.registerShutdownHook();
 		
-		Sagar sa1 = (Sagar) context.getBean("saga");
-		System.out.println(sa1);
+//		Sagar sa1 = (Sagar) context.getBean("saga");
+//		System.out.println(sa1);
 		context.registerShutdownHook();
+		
+		Vidith vi1 = (Vidith) context.getBean("vidi");
+		System.out.println(vi1);
 
 	}
 
