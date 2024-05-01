@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Auto config -->
+
+	<!-- <bean name="address2" class="com.springcore.auto.wire.Address">
+		<property name="street" value="bakers street" />
+		<property name="city" value="pune" />
+	</bean> -->
+	
+	<context:annotation-config/>
+	
+	<bean name="address" class="com.springcore.auto.wire.annotation.Address">
+		<property name="street" value="ville street" />
+		<property name="city" value="delhi" />
+	</bean>
+
+	<!-- <bean class="com.springcore.auto.wire.Emp" name="emp" autowire="byName"/> -->
+	<!-- if there are 2 beans with same name, then it will give error -->
+	
+
+	<!-- <bean class="com.springcore.auto.wire.Emp" name="emp"
+		autowire="byType" /> --> <!-- here, in byType, even if i change the name of the bean of Address above 
+		from address to any other, it will still recognise this -->
+	<!-- if there is another bean, with same details, then it will give an exception 
+		error, as spring will not be able to identify which one to choose from -->
+		
+	<!-- <bean class="com.springcore.auto.wire.annotation.Emp" name="emp"
+		autowire="constructor"/> -->
+	
+	<bean name="emp" class="com.springcore.auto.wire.annotation.Emp">
+	
+	</bean>
+
+</beans>
