@@ -1,9 +1,11 @@
 package com.springcore.auto.wire.annotation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Emp {
 	@Autowired
+	@Qualifier("address12") // pass the name of the bean you want as output
 	private Address address;
 
 	public Address getAddress() {
