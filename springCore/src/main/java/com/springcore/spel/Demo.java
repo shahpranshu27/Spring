@@ -14,16 +14,36 @@ public class Demo {
 
 	@Value("#{T(java.lang.Math).sqrt(64)}")
 	private double z;
-	
+
 	@Value("#{ T(java.lang.Math).E }")
 	private double e;
 	
 	@Value("#{ new java.lang.String('abc') }")
 	private String name;
 	
+	@Value("#{ 2>1 }")
+	private boolean val;
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public boolean isVal() {
+		return val;
+	}
+
+	public void setVal(boolean val) {
+		this.val = val;
+	}
+
 	public double getE() {
 		return e;
 	}
+	
 	public void setE(double e) {
 		this.e = e;
 	}
@@ -41,7 +61,7 @@ public class Demo {
 	}
 	@Override
 	public String toString() {
-		return "Demo [x=" + x + ", y=" + y + ", z=" + z + ", e=" + e + ", name=" + name + "]";
+		return "Demo [x=" + x + ", y=" + y + ", z=" + z + ", e=" + e + ", name=" + name + ", val=" + val + "]";
 	}
 	public int getY() {
 		return y;
