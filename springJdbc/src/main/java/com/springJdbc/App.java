@@ -19,13 +19,23 @@ public class App
     	
     	StudentDao studentDao1 = context.getBean("imp1", StudentDao.class);
     	
-    	Student student = new Student();
-    	student.setId(2);
-    	student.setName("pqr");
-    	student.setCity("Nyc");
+//    	Student student = new Student();
+//    	student.setId(2);
+//    	student.setName("pqr");
+//    	student.setCity("Nyc");
+//    	
+//    	int r = studentDao1.insert(student);
+//    	System.out.println(r);
     	
-    	int r = studentDao1.insert(student);
+    	Student student1 = new Student();
+    	student1.setId(12);
+    	student1.setName("def");
+    	student1.setCity("mumbai");
+//    	studentDao1.change(student1);
+    	
+    	int r = studentDao1.change(student1);
     	System.out.println(r);
+    	
     	
 //    	JdbcTemplate temp1 = context.getBean("jdbcTemplate", JdbcTemplate.class);
     	
