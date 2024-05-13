@@ -3,6 +3,7 @@ package com.springJdbc.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -69,6 +70,25 @@ public class StudentDaoImplement implements StudentDao{
 			}
 		}, studentId);
 		return student;
+	}
+
+
+	@Override
+	public List<Student> getAllStudents() {
+//		selecting multiple students
+		String query = "select * from student";
+//		this.jdbcTemplate.query(query, new RowMapper(){
+//
+//			@Override
+//			public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+//				// TODO Auto-generated method stub
+//				return null;
+//			}
+//			
+//		});
+		
+		List<Student> students = this.jdbcTemplate.query(query, new RowMapperImplement());
+		return students;
 	}
 
 

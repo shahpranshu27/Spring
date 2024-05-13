@@ -1,5 +1,6 @@
 package com.springJdbc;
 
+import java.util.List;
 import java.util.Scanner;
 
 import org.springframework.context.ApplicationContext;
@@ -22,13 +23,13 @@ public class App
     	StudentDao studentDao1 = context.getBean("imp1", StudentDao.class);
     	
 //    	INSERT
-//    	Student student = new Student();
-//    	student.setId(2);
-//    	student.setName("pqr");
-//    	student.setCity("Nyc");
-//    	
-//    	int r = studentDao1.insert(student);
-//    	System.out.println(r);
+    	Student student = new Student();
+    	student.setId(3);
+    	student.setName("pqr");
+    	student.setCity("Nyc");
+    	
+    	int r = studentDao1.insert(student);
+    	System.out.println(r);
     	
     	
 //    	UPDATE
@@ -66,8 +67,15 @@ public class App
 //    	System.out.println("rows changed: "+update);
     	
     	
-    	Student student = studentDao1.getStudent(1);
-    	System.out.println(student);
+//    	Student student = studentDao1.getStudent(1);
+//    	System.out.println(student);
+    	
+//    	SELECT
+    	List<Student> students = studentDao1.getAllStudents();
+    	for (Student s:students) {
+			System.out.println(s);
+		}
+//    	System.out.println(students);
     	
     	
     }
