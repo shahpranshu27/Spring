@@ -12,4 +12,6 @@ public interface StudentDao {
 //	public int delete(Student student);
 	
 	public int delete(int studentId);
+	
+	public Student getStudent(int studentId);
 }

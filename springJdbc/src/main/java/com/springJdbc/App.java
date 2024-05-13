@@ -48,12 +48,12 @@ public class App
 //    	int r2 = studentDao1.delete(student2);
 //    	System.out.println(r2);
     	
-    	Student student3 = new Student();
-    	Scanner sc = new Scanner(System.in);
-    	int id = sc.nextInt();
-//    	student3.setId(id);
-    	int r3 = studentDao1.delete(id);
-    	System.out.println(r3);
+//    	Student student3 = new Student();
+//    	Scanner sc = new Scanner(System.in);
+//    	int id = sc.nextInt();
+////    	student3.setId(id);
+//    	int r3 = studentDao1.delete(id);
+//    	System.out.println(r3);
     	
     	
 //    	JdbcTemplate temp1 = context.getBean("jdbcTemplate", JdbcTemplate.class);
@@ -64,6 +64,11 @@ public class App
 //    	fire query
 //    	int update = temp1.update(insert_query,12,"xyz","delhi");
 //    	System.out.println("rows changed: "+update);
+    	
+    	
+    	Student student = studentDao1.getStudent(1);
+    	System.out.println(student);
+    	
     	
     }
 }
