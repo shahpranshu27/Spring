@@ -1,6 +1,5 @@
 package com.springJdbc.dao;
 
-import javax.sql.rowset.JoinRowSet;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -37,6 +36,26 @@ public class StudentDaoImplement implements StudentDao{
 		int r = this.jdbcTemplate.update(updateQuery, student.getName(), student.getCity(), student.getId());
 		return r;
 	}
+
+
+	@Override
+	public int delete(int studentId) {
+		// delete query
+		String deleteQuery = "delete from student where id=?"; 
+		int r = this.jdbcTemplate.update(deleteQuery, studentId);
+		return r;
+	}
+
+
+//	@Override
+//	public int delete(Student student) {
+////		delete query
+//		String deleteQuery = "delete from student where id=?";
+//		int r = this.jdbcTemplate.update(deleteQuery, student.getId());
+//		return r;
+//	}
+	
+	
 
 
 }
