@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.employee.Employee;
 import com.employee.service.EmployeeService;
 
-//@RestController
-//@RequestMapping("/employees")
 public class EmployeeController {
 
 	@Autowired
@@ -19,7 +17,6 @@ public class EmployeeController {
 	}
 
 
-	//	@GetMapping
 	public List<Employee> getAllEmployees(){
 		return employeeService.getAllEmployees();
 	}

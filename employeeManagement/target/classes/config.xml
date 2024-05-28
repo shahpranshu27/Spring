@@ -12,6 +12,7 @@
   
    <!-- Component scanning -->
     <context:component-scan base-package="com.employee"/>
+    <!-- Automatically detects and registers the beans without explicitly defining them in the XML configuration -->
 
     <!-- DataSource configuration -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -20,33 +21,40 @@
         <property name="username" value="root"/>
         <property name="password" value="Rays@123"/>
     </bean>
+    <!-- Configures the database connection properties such as driver class name, URL, username, and password -->
 
     <!-- JdbcTemplate bean -->
     <bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <property name="dataSource" ref="dataSource"/>
     </bean>
+    <!-- Injects the dataSource bean, so JdbcTemplate uses it to connect to the database -->
 
     <!-- Enable annotation-driven transaction management -->
     <tx:annotation-driven/>
+    <!-- Allows Spring to automatically handle transaction boundaries based on the annotations -->
 
     <!-- Transaction Manager -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
+    <!-- Associates the transaction manager with the dataSource to handle transaction management -->
 
     <!-- EmployeeDao bean -->
     <bean id="employeeDao" class="com.employee.dao.EmployeeDaoImplement">
         <constructor-arg ref="jdbcTemplate"/>
     </bean>
+    <!--  Injects the jdbcTemplate bean into the EmployeeDaoImplement constructor, enabling it to perform database operations using JDBC -->
 
     <!-- EmployeeService bean -->
     <bean id="employeeService" class="com.employee.service.EmployeeService">
         <constructor-arg name="employeeDao" ref="employeeDao"/>
     </bean>
+	<!-- Injects the employeeDao bean into the EmployeeService constructor, enabling it to call DAO methods -->
 
     <!-- EmployeeController bean -->
     <bean id="employeeController" class="com.employee.controller.EmployeeController">
         <constructor-arg name="employeeService" ref="employeeService"/>
     </bean>
+    <!-- Injects the employeeService bean into the EmployeeController constructor, enabling it to call service methods -->
   
 </beans>
